@@ -16,7 +16,8 @@ services:
       retries: 3
 
   ocpp-db:
-    image: postgis/postgis:16-3.5
+    image: imresamu/postgis:17-3.5.2-alpine3.21
+    platform: linux/arm64
     ports:
       - 5432:5432
     volumes:
@@ -82,7 +83,7 @@ services:
       APP_NAME: 'all'
       APP_ENV: 'docker'
       # Add AWS region (required by the SDK)
-      AWS_REGION: us-east-1
+      AWS_REGION: ap-southeast-1
       # Skip authentication completely - use public access
       AWS_ACCESS_KEY_ID: minioadmin
       AWS_SECRET_ACCESS_KEY: minioadmin
